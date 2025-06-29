@@ -38,7 +38,7 @@ const GradeS = () => {
           </Link> */}
           <button
             onClick={handleDownload}
-            className="flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-md shadow"
+            className="flex items-center cursor-pointer gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-md shadow"
           >
             <FaCloudDownloadAlt className="text-lg" />
             Download
