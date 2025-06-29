@@ -2,6 +2,15 @@ import { FaCloudDownloadAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const GradeS = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/gradesheet-web.pdf";
+    link.setAttribute("download", "gradesheet-web.pdf");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Breadcrumb and Page Title */}
@@ -19,14 +28,21 @@ const GradeS = () => {
       <div className="flex-1 p-4 md:p-8 bg-gray-50 flex flex-col lg:flex-row justify-between items-start gap-6">
         {/* Download Button */}
         <div className="flex-1 flex justify-center items-center">
-          <Link
+          {/* <Link
             href="/gradesheet-web.pdf"
             download
             className="flex cursor-pointer items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-md shadow"
           >
             <FaCloudDownloadAlt className="text-lg" />
             Download
-          </Link>
+          </Link> */}
+          <button
+            onClick={handleDownload}
+            className="flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-md shadow"
+          >
+            <FaCloudDownloadAlt className="text-lg" />
+            Download
+          </button>
         </div>
 
         {/* Student Info Card */}
